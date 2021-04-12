@@ -6,7 +6,7 @@ Pseudo Code
     look up how to alert user of what is happening
  4. Update and display statistics -- 
     create separate variables (wins, losses, ties)
-    cretae an object (statistics = wins: 0, losses: 0, ties: 0)
+    create an object (statistics = wins: 0, losses: 0, ties: 0)
  5. Confirm if want to play again
     look up how to confrim this
 
