@@ -19,3 +19,5 @@ function playGame ( ) {
 }
 
 playGame ();
+
+re-writing code from mini-project to help with muscle memory.

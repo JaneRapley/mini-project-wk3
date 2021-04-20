@@ -1,22 +1,50 @@
-//function playGame(){
-    //1 prompt the user for R/P/S -- look up how to prompt the user
-    //2 randomly select a computer R/P/S -- check the bonus from 26
-    //3 compare user response to computer seletion -- condational
-        //look up how to alert the user of what is happening
-    //4update and dispaly the statistics
-        //create separate variable (wins, losses, ties)
-        //create an object (stats = {wins: 0 losses: 0 ties: 0})
-    //5confirm if want to play again
-        //look up how to confirm this
-//}
- //playGame();
+var wins = 0;
+var ties = 0;
+var losses = 0;
 
+var options = ["R", "P", "S"];
 
- function playGame (){
-    window.alert("Do you want to play a Game?");
-    var seletion = window.prompt("Type R, P, or S");
-    var compSelect = ("R", "P", "S")       
- }
+var playGame = function() {
+    var userChoice = window.prompt("Enter R, P, or S:");
 
-playGame()
+    if(!userChoice){
+        return;
+    }
+
+    userChoice = userChoice.toUpperCase();
+
+    var index = Math.floor(Math.random() * options.length);
+    var computerChoice = options[index];
+
+    window.alert("The computer chose " + computerChoice);
+
+    if (userChoice === computerChoice) {
+        ties++;
+        window.alert("It's a tie!");
+    
+    } else if (
+        (userChoice === "R" && computerChoice === "S") ||
+        (userChoice === "P" && computerChoice === "R") ||
+        (userChoice === "S" && computerChoice === "P")
+    ) {
+        wins++;
+        window.alert("You win!");
+
+    } else {
+        losses++;
+        window.alert("You lost!");
+    }
+
+    window.alert(
+        "Stat:\nWins:" + wins + "\nLosses:" + losses + "\nTies:" + ties
+    );
+
+    var playAgain = window.confirm("Play again?");
+
+    if(playAgain){
+        playGame();
+    }
+};
+
+playGame();
 
